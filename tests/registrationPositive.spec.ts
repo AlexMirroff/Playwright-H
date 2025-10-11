@@ -4,10 +4,10 @@ test.describe("Sign up positive", () => {
 
     test.beforeEach(async ({ page }) => {
         await page.goto("/")
+        await page.locator("text=Sign up").click()
     })
 
     test("Successful sign up with valid data", async ({ page }) => {
-        await page.locator("text=Sign up").click()
         await page.locator("#signupName").fill("Alex")
         await page.locator("#signupLastName").fill("Mirroff")
         await page.locator("#signupEmail").fill(`mirhaiazov+${Date.now()}@gmail.com`)
@@ -18,7 +18,6 @@ test.describe("Sign up positive", () => {
     })
 
     test("Close sign up pop up", async ({ page }) => {
-        await page.locator("text=Sign up").click()
         await expect(page.locator("h4.modal-title")).toBeVisible()
         await page.locator("button.close").click()
         await page.waitForTimeout(300) // wait for animation
