@@ -1,0 +1,22 @@
+{
+  "name": "playwright-h",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AlexMirroff/Playwright-H.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AlexMirroff/Playwright-H/issues"
+  },
+  "homepage": "https://github.com/AlexMirroff/Playwright-H#readme",
+  "description": "",
+  "devDependencies": {
+    "@playwright/test": "^1.55.1",
+    "@types/node": "^24.6.2"
+  }
+}
