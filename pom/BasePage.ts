@@ -7,6 +7,9 @@ export default class BasePage {
     constructor(page: Page) {
         this.page = page
         this.errorMessage = this.page.locator("//form//p")
+    }
 
+    async waitForAnimation(time: number) {
+        await this.page.waitForTimeout(time)
     }
 }

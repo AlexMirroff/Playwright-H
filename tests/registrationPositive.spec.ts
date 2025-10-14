@@ -17,7 +17,7 @@ test.describe("Sign up positive", () => {
         await homePage.openSignUnForm()
     })
 
-    test("Successful sign up with valid data", async ({ page }) => {
+    test("Successful sign up with valid data", async () => {
         await signUpForm.enterName("Alex")
         await signUpForm.enterLastName("Mirroff")
         await signUpForm.enterEmail(`mirhaiazov+${Date.now()}@gmail.com`)
@@ -27,10 +27,10 @@ test.describe("Sign up positive", () => {
         await expect(garagePage.pageTitle).toBeVisible()
     })
 
-    test("Close sign up pop up", async ({ page }) => {
+    test("Close sign up pop up", async () => {
         await expect(signUpForm.formTitle).toBeVisible()
         await signUpForm.clickCloseButton()
-        await page.waitForTimeout(300) // wait for animation
+        await signUpForm.waitForAnimation(300)
         await expect(signUpForm.formTitle).not.toBeVisible()
     })
 })

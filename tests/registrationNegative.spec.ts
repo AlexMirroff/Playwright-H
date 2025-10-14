@@ -142,7 +142,6 @@ test.describe("Sign up negative", () => {
             await expect(signUpForm.lastNameField).toHaveCSS("border-color", "rgb(220, 53, 69)")
             await expect(signUpForm.registerButton).toBeDisabled()
         })
-
     })
 
     test.describe("Email field negative", () => {
@@ -175,7 +174,6 @@ test.describe("Sign up negative", () => {
         })
 
         test("Email with symbols", async () => {
-
             await signUpForm.enterEmail("test@gmail.co+m")
             await signUpForm.triggerErrorOnField(signUpForm.emailField)
             await expect(signUpForm.errorMessage).toHaveText("Email is incorrect")

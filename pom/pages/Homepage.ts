@@ -12,5 +12,4 @@ export default class HomePage extends BasePage {
     async openSignUnForm() {
         await this.signUpButton.click()
     }
-
 }
