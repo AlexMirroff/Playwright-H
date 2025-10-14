@@ -1,26 +1,36 @@
 import { test, expect } from "@playwright/test"
+import HomePage from "../pom/pages/Homepage"
+import SignUpForm from "../pom/forms/SignUpForm";
+import GaragePage from "../pom/pages/GaragePage";
 
 test.describe("Sign up positive", () => {
 
+    let homePage: HomePage;
+    let signUpForm: SignUpForm;
+    let garagePage: GaragePage;
+
     test.beforeEach(async ({ page }) => {
-        await page.goto("/")
-        await page.locator("text=Sign up").click()
+        homePage = new HomePage(page);
+        signUpForm = new SignUpForm(page);
+        garagePage = new GaragePage(page);
+        await homePage.navigate()
+        await homePage.openSignUnForm()
     })
 
     test("Successful sign up with valid data", async ({ page }) => {
-        await page.locator("#signupName").fill("Alex")
-        await page.locator("#signupLastName").fill("Mirroff")
-        await page.locator("#signupEmail").fill(`mirhaiazov+${Date.now()}@gmail.com`)
-        await page.locator("#signupPassword").fill("Aa34567890")
-        await page.locator("#signupRepeatPassword").fill("Aa34567890")
-        await page.locator("text=Register").click()
-        await expect(page.locator("h1")).toHaveText("Garage")
+        await signUpForm.enterName("Alex")
+        await signUpForm.enterLastName("Mirroff")
+        await signUpForm.enterEmail(`mirhaiazov+${Date.now()}@gmail.com`)
+        await signUpForm.enterPassword("Aa34567890")
+        await signUpForm.enterRePassword("Aa34567890")
+        await signUpForm.clickRegisterButton()
+        await expect(garagePage.pageTitle).toBeVisible()
     })
 
     test("Close sign up pop up", async ({ page }) => {
-        await expect(page.locator("h4.modal-title")).toBeVisible()
-        await page.locator("button.close").click()
+        await expect(signUpForm.formTitle).toBeVisible()
+        await signUpForm.clickCloseButton()
         await page.waitForTimeout(300) // wait for animation
-        await expect(page.locator("h4.modal-title")).not.toBeVisible()
+        await expect(signUpForm.formTitle).not.toBeVisible()
     })
 })
