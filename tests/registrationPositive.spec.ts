@@ -1,18 +1,18 @@
 import { test, expect } from "@playwright/test"
 import HomePage from "../pom/pages/Homepage"
-import SignUpForm from "../pom/forms/SignUpForm";
-import GaragePage from "../pom/pages/GaragePage";
+import SignUpForm from "../pom/forms/SignUpForm"
+import GaragePage from "../pom/pages/GaragePage"
 
 test.describe("Sign up positive", () => {
 
-    let homePage: HomePage;
-    let signUpForm: SignUpForm;
-    let garagePage: GaragePage;
+    let homePage: HomePage
+    let signUpForm: SignUpForm
+    let garagePage: GaragePage
 
     test.beforeEach(async ({ page }) => {
-        homePage = new HomePage(page);
-        signUpForm = new SignUpForm(page);
-        garagePage = new GaragePage(page);
+        homePage = new HomePage(page)
+        signUpForm = new SignUpForm(page)
+        garagePage = new GaragePage(page)
         await homePage.navigate()
         await homePage.openSignUnForm()
     })

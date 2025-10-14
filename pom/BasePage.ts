@@ -1,11 +1,11 @@
-import { Locator, Page } from "@playwright/test";
+import { Locator, Page } from "@playwright/test"
 
 export default class BasePage {
-    protected readonly page: Page;
+    protected readonly page: Page
     public readonly errorMessage: Locator
 
     constructor(page: Page) {
-        this.page = page;
+        this.page = page
         this.errorMessage = this.page.locator("//form//p")
 
     }

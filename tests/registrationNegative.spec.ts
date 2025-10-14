@@ -4,12 +4,12 @@ import SignUpForm from "../pom/forms/SignUpForm"
 
 test.describe("Sign up negative", () => {
 
-    let homePage: HomePage;
-    let signUpForm: SignUpForm;
+    let homePage: HomePage
+    let signUpForm: SignUpForm
 
     test.beforeEach(async ({ page }) => {
-        homePage = new HomePage(page);
-        signUpForm = new SignUpForm(page);
+        homePage = new HomePage(page)
+        signUpForm = new SignUpForm(page)
         await homePage.navigate()
         await homePage.openSignUnForm()
     })
