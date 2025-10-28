@@ -14,7 +14,7 @@ export default class HomePage extends BasePage {
         await this.signUpButton.click()
     }
 
-    async openSignInForm(): Promise<void> {
+    async openSignInForm() {
         await this.signInButton.click()
     }
 }

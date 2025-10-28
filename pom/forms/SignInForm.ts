@@ -7,21 +7,21 @@ export default class SignInForm extends BasePage {
     public readonly passwordField: Locator = this.page.locator('//input[@id="signinPassword"]')
     private readonly loginButton: Locator = this.page.locator('//div[contains(@class, "modal-footer")]// button[@class="btn btn-primary"]')
 
-    async loginWithCredentials(email: string, password: string): Promise<void> {
+    async loginWithCredentials(email: string, password: string) {
         await this.enterEmail(email)
         await this.enterPassword(password)
         await this.clickLoginButton()
     }
 
-    async enterEmail(email: string): Promise<void> {
+    async enterEmail(email: string) {
         await this.emailField.fill(email)
     }
 
-    async enterPassword(password: string): Promise<void> {
+    async enterPassword(password: string) {
         await this.passwordField.fill(password)
     }
 
-    async clickLoginButton(): Promise<void> {
+    async clickLoginButton() {
         await this.loginButton.click()
     }
 
