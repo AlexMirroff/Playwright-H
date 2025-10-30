@@ -15,7 +15,7 @@ export default class CarsController {
         return response
     }
 
-    async addCar(carData: { carBrandId: number; carModelId: number; mileage: number }, sid: string) {
+    async addCar(carData: { carBrandId?: number; carModelId?: number; mileage?: number }, sid: string) {
         const response = await this.request.post('/api/cars', {
             data: carData,
             headers: {
