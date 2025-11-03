@@ -2,7 +2,9 @@
   "name": "playwright-h",
   "version": "1.0.0",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "test": "npx playwright test"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/AlexMirroff/Playwright-H.git"
