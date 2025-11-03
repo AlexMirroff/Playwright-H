@@ -10,8 +10,8 @@ on:
       - main
 
 env:
-  HTTP_USERNAME: ${{ secrets.HTTP_USERNAME }}
-  HTTP_PASSWORD: ${{ secrets.HTTP_PASSWORD }} 
+  HTTP_USERNAME: ${{ secrets.BASIC_AUTH_USERNAME }}
+  HTTP_PASSWORD: ${{ secrets.BASIC_AUTH_PASSWORD }} 
 
 jobs:
   test:
