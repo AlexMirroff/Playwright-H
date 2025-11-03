@@ -9,10 +9,8 @@ on:
   push:
     branches:
       - main
-      - lesson31
-  pull_request:
-    branches:
-      - main
+      - homework-30
+
 
 env:
   BASE_URL: ${{ secrets.BASE_URL }}
